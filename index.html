@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Designer and Developer</title>
+  <meta name="description"
+    content="Portfolio of Your Name, a designer and developer building clear, fast websites and apps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eceaf4;
+      --ink: #1b1f3b;
+      --muted: #565a78;
+      --blue: #3a4bff;
+      --peach: #ffb88a;
+      --white: #ffffff;
+      --line: #cfcde0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "DM Sans", system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      line-height: 1;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    .hero {
+      padding: 56px 0 96px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.4rem, 12vw, 9.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--blue);
+    }
+
+    .hero-row {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero p {
+      max-width: 36ch;
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: var(--blue);
+    }
+
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+    }
+
+    .project:first-of-type {
+      border-top: 1px solid var(--line);
+    }
+
+    .project:nth-of-type(even) .thumb {
+      order: 2;
+    }
+
+    .thumb {
+      aspect-ratio: 4 / 3;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease;
+    }
+
+    .project:hover .thumb {
+      transform: scale(1.02);
+    }
+
+    .t1 {
+      background: var(--blue);
+    }
+
+    .t1::before {
+      content: "";
+      position: absolute;
+      width: 55%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--peach);
+      right: -8%;
+      bottom: -12%;
+    }
+
+    .t2 {
+      background: var(--peach);
+    }
+
+    .t2::before {
+      content: "";
+      position: absolute;
+      inset: 18% 22%;
+      background: var(--ink);
+      border-radius: 12px;
+      transform: rotate(-8deg);
+    }
+
+    .t3 {
+      background: var(--ink);
+    }
+
+    .t3::before {
+      content: "";
+      position: absolute;
+      left: 14%;
+      right: 14%;
+      top: 30%;
+      height: 14%;
+      background: var(--blue);
+      border-radius: 99px;
+      box-shadow: 0 36px 0 var(--peach), 0 72px 0 var(--white);
+    }
+
+    .t4 {
+      background: var(--white);
+    }
+
+    .t4::before {
+      content: "";
+      position: absolute;
+      width: 60%;
+      aspect-ratio: 1;
+      left: 8%;
+      top: 12%;
+      border-radius: 50% 50% 0 50%;
+      background: var(--blue);
+    }
+
+    .t4::after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      aspect-ratio: 1;
+      right: 10%;
+      bottom: 10%;
+      background: var(--peach);
+      border-radius: 0 50% 50% 50%;
+    }
+
+    .project h3 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      max-width: 42ch;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .project:hover h3 {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+      text-decoration-color: var(--blue);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+    }
+
+    .about p {
+      margin: 0 0 18px;
+      max-width: 52ch;
+    }
+
+    .skills {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills li {
+      background: var(--white);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    h3.small {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .contact {
+      text-align: left;
+    }
+
+    .contact a.mail {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 6vw, 4rem);
+      text-decoration: none;
+      word-break: break-word;
+      border-bottom: 4px solid var(--blue);
+    }
+
+    .contact a.mail:hover {
+      color: var(--blue);
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+
+      .project,
+      .about {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project:nth-of-type(even) .thumb {
+        order: 0;
+      }
+
+      nav a {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .thumb {
+        transition: none;
+      }
+    }
+
+    /* Position Crisp Chatbot Container on Left Side */
+    .crisp-client,
+    .crisp-client *,
+    #crisp-chatbox {
+      z-index: 2147483647 !important;
+    }
+
+    .crisp-client {
+      position: fixed !important;
+      left: 24px !important;
+      right: auto !important;
+      bottom: 24px !important;
+    }
+
+    /* Target only outer launcher & widget containers, leaving internal chat bubbles intact */
+    .crisp-client .cc-165wh,
+    .crisp-client .cc-lk42u,
+    .crisp-client .cc-13wro,
+    .crisp-client .cc-w7v18 {
+      left: 24px !important;
+      right: auto !important;
+    }
+
+    /* Restrict Chatboq Chatbot iframe to the Right Side so it doesn't block the screen */
+    iframe[title="Chatboq Chat Widget"] {
+      top: auto !important;
+      left: auto !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 420px !important;
+      height: 700px !important;
+      max-width: 100vw !important;
+      max-height: 100vh !important;
+    }
+  </style>
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "67933c2d-c3a2-4f6f-b168-a70f6dcd7644";
+
+    // Auto-set data-position-reverse="true" on Crisp top container for reverse layout
+    const crispObserver = new MutationObserver(() => {
+      const crispMain = document.querySelector(".crisp-client .cc-165wh");
+      if (crispMain) {
+        crispMain.setAttribute("data-position-reverse", "true");
+      }
+    });
+    crispObserver.observe(document.documentElement, { childList: true, subtree: true });
+
+    (function () {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+  <script src="https://stagingv2.chatboq.com/widget.js" data-org-id="5d96c609-3f24-48d5-9fb5-7325ddb11db6"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#top">Your Name</a>
+      <nav aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <h1>Your Name<span>builds things for the web.</span></h1>
+        <div class="hero-row">
+          <p>I'm a designer and developer based in Your City. I make clear, fast websites and apps for small teams and
+            founders.</p>
+          <a class="btn" href="#work">See my work</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Selected work</h2>
+
+        <a class="project" href="#">
+          <div class="thumb t1" role="img" aria-label="Abstract blue and peach artwork for Project One"></div>
+          <div>
+            <h3>Project One</h3>
+            <p>A booking app for a neighborhood fitness studio. Cut sign-up time from five minutes to under one.</p>
+            <span class="meta">Product design, React &nbsp;|&nbsp; 2026</span>
+          </div>
+        </a>
+
+        <a class="project" href="#">
+          <div class="thumb t2" role="img" aria-label="Abstract peach and dark artwork for Project Two"></div>
+          <div>
+            <h3>Project Two</h3>
+            <p>A brand and website for a family-run bakery, built so staff can update the menu themselves.</p>
+            <span class="meta">Branding, Web design &nbsp;|&nbsp; 2025</span>
+          </div>
+        </a>
+
+        <a class="project" href="#">
+          <div class="thumb t3" role="img" aria-label="Abstract striped artwork for Project Three"></div>
+          <div>
+            <h3>Project Three</h3>
+            <p>A reporting dashboard that turns a nonprofit's spreadsheets into one weekly view for its board.</p>
+            <span class="meta">Data visualization, TypeScript &nbsp;|&nbsp; 2025</span>
+          </div>
+        </a>
+
+        <a class="project" href="#">
+          <div class="thumb t4" role="img" aria-label="Abstract shapes artwork for Project Four"></div>
+          <div>
+            <h3>Project Four</h3>
+            <p>An open-source component library used by three small product teams for consistent forms and tables.</p>
+            <span class="meta">Design system, Open source &nbsp;|&nbsp; 2024</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About</h2>
+        <div class="about">
+          <div>
+            <p>I started out designing posters and moved into code when I wanted to make the things I drew actually
+              work. Today I handle both sides: research and interface design, then the build.</p>
+            <p>I like small teams, short feedback loops and projects where I can see a real person use what I made.
+              Outside of work I bake bread and take long walks with a film camera.</p>
+          </div>
+          <div>
+            <h3 class="small">What I work with</h3>
+            <ul class="skills">
+              <li>UI design</li>
+              <li>Figma</li>
+              <li>HTML and CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Accessibility</li>
+              <li>Brand identity</li>
+              <li>User research</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Let's work together</h2>
+        <a class="mail" href="mailto:hello@yourname.com">hello@yourname.com</a>
+        <div class="links">
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">Dribbble</a>
+          <a href="#">Download resume (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Your Name. Built by hand with HTML and CSS.</div>
+  </footer>
+</body>
+
+</html>
